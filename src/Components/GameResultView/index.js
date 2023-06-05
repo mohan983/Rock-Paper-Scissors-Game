@@ -7,7 +7,7 @@ import {
   ResultButton,
 } from './StyledComponent'
 
-const GameResult = props => {
+const GameResultView = props => {
   const {gameResult, choicesArray, restartGame} = props
   const onClickPlayAgain = () => {
     restartGame()
@@ -32,4 +32,4 @@ const GameResult = props => {
   )
 }
 
-export default GameResult
+export default GameResultView

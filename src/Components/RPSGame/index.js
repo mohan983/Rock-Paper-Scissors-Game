@@ -1,7 +1,7 @@
 import {Component} from 'react'
 import HeaderComponent from '../HeaderComponent'
 import PopupComponent from '../PopupComponent'
-import GameResult from '../GameResult'
+import GameResultView from '../GameResultView'
 import {
   GameContainer,
   GameViewContainer,
@@ -84,34 +84,25 @@ class RPSGame extends Component {
           type="button"
           key={choicesList[0].id}
           data-testid="rockButton"
+          onClick={() => this.checkResult(choicesList[0].id)}
         >
-          <GameImage
-            src={choicesList[0].imageUrl}
-            alt={choicesList[0].id}
-            onClick={() => this.checkResult(choicesList[0].id)}
-          />
+          <GameImage src={choicesList[0].imageUrl} alt={choicesList[0].id} />
         </GameButton>
         <GameButton
           type="button"
           key={choicesList[1].id}
-          data-testid="paperButton"
+          data-testid="scissorsButton"
+          onClick={() => this.checkResult(choicesList[1].id)}
         >
-          <GameImage
-            src={choicesList[1].imageUrl}
-            alt={choicesList[1].id}
-            onClick={() => this.checkResult(choicesList[1].id)}
-          />
+          <GameImage src={choicesList[1].imageUrl} alt={choicesList[1].id} />
         </GameButton>
         <GameButton
           type="button"
           key={choicesList[2].id}
-          data-testid="scissorsButton"
+          data-testid="paperButton"
+          onClick={() => this.checkResult(choicesList[2].id)}
         >
-          <GameImage
-            src={choicesList[2].imageUrl}
-            alt={choicesList[2].id}
-            onClick={() => this.checkResult(choicesList[2].id)}
-          />
+          <GameImage src={choicesList[2].imageUrl} alt={choicesList[2].id} />
         </GameButton>
       </GameViewContainer>
     )
@@ -120,7 +111,7 @@ class RPSGame extends Component {
       <GameContainer>
         <HeaderComponent score={score} />
         {isGameOver ? (
-          <GameResult
+          <GameResultView
             gameResult={gameResult}
             choicesArray={choicesArray}
             restartGame={this.restartGame}

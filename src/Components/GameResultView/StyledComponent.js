@@ -38,6 +38,7 @@ export const ResultButton = styled.button`
   border-radius: 4px;
   border-style: none;
   outline: none;
+  cursor: pointer;
 `
 export const GameImage = styled.img`
   width: 150px;

@@ -1,5 +1,8 @@
 .popup-container {
   display: flex;
+  width: 90vw;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
 .modal-container {
@@ -31,7 +34,6 @@
   color: #223a5f;
   padding: 15px;
   border-radius: 5px;
-  align-self: flex-end;
   cursor: pointer;
 }
 
